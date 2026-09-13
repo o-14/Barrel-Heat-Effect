@@ -1,0 +1,23 @@
+{
+  "unique_mcm_controls": 30,
+  "control_occurrences": 41,
+  "requested_defaults": {
+    "fRefractionMaxStrength:Haze": "0.04",
+    "fArtOffsetUp:Haze": "1",
+    "fHeatPerShot:Heat": "0.07",
+    "fPulseStrength:Haze": "0.01",
+    "fPuffScale:Haze": "0.1",
+    "fPuffRise:Haze": "0.5"
+  },
+  "pulse_slider": {
+    "min": 0.005,
+    "max": 0.05,
+    "step": 0.005
+  },
+  "puff_rise_slider": {
+    "min": 0.0,
+    "max": 1.0,
+    "step": 0.1
+  },
+  "result": "All controls covered; duplicate definitions and four default sources agree; changed slider values reachable."
+}

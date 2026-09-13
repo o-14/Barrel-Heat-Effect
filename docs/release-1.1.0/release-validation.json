@@ -1,0 +1,189 @@
+{
+  "release": "1.1.0",
+  "previous_name": "Gun Heat Haze",
+  "name": "Barrel Heat Effect",
+  "branch": "claude/multi-runtime-0200",
+  "release_commit": "35f1eef654a541564f82c7376ea8d9000f8907c0",
+  "renamed": {
+    "dll": "GunHeat.dll -> BarrelHeatEffect.dll",
+    "ini": "GunHeat.ini -> BarrelHeatEffect.ini",
+    "esp": "GunHeatHaze.esp -> BarrelHeatEffect.esp",
+    "mcm_config": "MCM/Config/GunHeat -> MCM/Config/BarrelHeatEffect",
+    "mcm_settings": "Data/MCM/Settings/GunHeat.ini -> BarrelHeatEffect.ini",
+    "log": "GunHeat.log -> BarrelHeatEffect.log",
+    "f4se_plugin_name": "GunHeat -> BarrelHeatEffect",
+    "xmake_target": "GunHeat -> BarrelHeatEffect",
+    "archives": "GunHeatHaze-<v>.zip -> BarrelHeatEffect-<v>.zip"
+  },
+  "deliberately_kept": {
+    "papyrus_namespace": "GunHeat:* and Data/Scripts/GunHeat/ - bound inside the esp's VMAD",
+    "esp_internals": "quest EDID GunHeatControllerQuest (named by main.cpp's startquest), the VMAD binding, the ARTO EDID, the MODL path",
+    "art_folders": "Data/Meshes/GunHeatHaze and Data/Textures/GunHeatHaze - paths stored in the esp MODL and inside the NIF",
+    "reason": "each would need binary surgery inside the esp or the NIF, with the script binding at stake, and none is visible in play"
+  },
+  "breaking": {
+    "esp": "a save made with GunHeatHaze.esp loses that plugin; enable BarrelHeatEffect.esp",
+    "mcm": "MCM looks for settings under the new modName; rename Data/MCM/Settings/GunHeat.ini to BarrelHeatEffect.ini to carry tuned values over, or the panel starts from defaults"
+  },
+  "verified": {
+    "settings": "all 45 parse identical to 1.0.0 except sArtObjectPlugin, which names the esp",
+    "panel": "all 39 config.json content entries identical; only modName and displayName differ",
+    "esp": "byte-identical to 1.0.0, only the filename changed",
+    "entries_identical_to_1_0_0": 12,
+    "defaults": "all 30 controls agree across all five places (six for fHeatPerShot)",
+    "dll": {
+      "bytes": 696320,
+      "was": 695808,
+      "growth": "512 bytes, all .rdata: the identity strings are longer and the section crossed one alignment block; .text is the same size",
+      "plugin_version": "0x01010000",
+      "query_reports": "0x01010000",
+      "compatible_versions": [
+        "0x010a3d80",
+        "0x010b0dd0",
+        "0x010b0f00"
+      ],
+      "old_paths_absent": [
+        "GunHeat.ini",
+        "GunHeatHaze.esp",
+        "Data/MCM/Settings/GunHeat.ini"
+      ],
+      "quest_edid_kept": "GunHeatControllerQuest, matching the esp"
+    }
+  },
+  "archives": {
+    "BarrelHeatEffect-1.1.0.zip": {
+      "bytes": 655541,
+      "sha256": "98acaa89bdcc1c7111b319474bfe0ddc6c029f0f0fdd6d13994a50ca9a7ee9d1"
+    },
+    "BarrelHeatEffect-1.1.0-source.zip": {
+      "bytes": 3558232,
+      "sha256": "233095d2d1df67a9b37a6dd994ef36e4297eb004a3d044f4ec1c5ede6fdb3bf7"
+    }
+  },
+  "entries": [
+    {
+      "path": "F4SE/Plugins/BarrelHeatEffect.dll",
+      "bytes": 696320,
+      "sha256": "b50499667522b809608b22ab34ede448c64ae41d38d4043a814b40e21d068cc2",
+      "status": "renamed"
+    },
+    {
+      "path": "F4SE/Plugins/BarrelHeatEffect.ini",
+      "bytes": 9201,
+      "sha256": "17480e702bbbbc1dd30b09972de65c9a0ab51e70044cf948479f1f2df0bf5f09",
+      "status": "renamed"
+    },
+    {
+      "path": "BarrelHeatEffect.esp",
+      "bytes": 442,
+      "sha256": "3a5ed81f4b8fd7d914f125de085e38dd2235a4f6c9c7364844730b59102cac34",
+      "status": "renamed"
+    },
+    {
+      "path": "MCM/Config/BarrelHeatEffect/config.json",
+      "bytes": 16264,
+      "sha256": "a39a052dea4055ac8090eb57e3534eb9cb250471d5da6d1078689fe04ff7aa90",
+      "status": "renamed"
+    },
+    {
+      "path": "MCM/Config/BarrelHeatEffect/settings.ini",
+      "bytes": 1637,
+      "sha256": "6982a36b2024cfc20e3d300772f2f76e361b58b8ac7bdcdeb116cb25c06526ee",
+      "status": "renamed"
+    },
+    {
+      "path": "Meshes/GunHeatHaze/GunHeatBarrelRefractionCard.nif",
+      "bytes": 11857,
+      "sha256": "d6d049a85dee3703f14f7f33b2481b9f4849c257598b23641b2afe4cdd3eef05",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Textures/GunHeatHaze/Soft0172_n.dds",
+      "bytes": 349700,
+      "sha256": "536c353d5879068b9c45d2bdbf28eb8d5cb923221d38428b82c32f9c7055c608",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatController.pex",
+      "bytes": 3668,
+      "sha256": "0c65c3cfd24c1ee8690164b26d467fd06e5654dddf15ba8bb43655e190c8d56d",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatNative.pex",
+      "bytes": 939,
+      "sha256": "1300c8a42451049e0cf21bf601c651bcf568b348b8375899df250a02d6c2989c",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Scripts/GunHeat/PlayerAlias.pex",
+      "bytes": 597,
+      "sha256": "1571571960f4cbb233999b8540a65796838a2fcfc19d618e7a9f7c1bdb3cc6dd",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatController.psc",
+      "bytes": 5935,
+      "sha256": "54f395259435aaa021258d0c8f4c1961d88bace7fcadcac8c122b1265ffc9952",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatNative.psc",
+      "bytes": 1367,
+      "sha256": "d0ac47d446ff305022d0ad75a6c60aa011df3a0f934493a092a89fedaf573478",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/PlayerAlias.psc",
+      "bytes": 218,
+      "sha256": "47a1ed8ed43542d151eb282aa6e952458e26ed16b1948dda13e50cedefe4c8f1",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "bytes": 1075,
+      "sha256": "6a50885ef644597d4e869288bee0950f2e359958e2561cbe6db3599f763c7ca3",
+      "status": "changed"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 6013,
+      "sha256": "dde2ab0c3b31fa31031a6851545b8ec671a971c649fa04c1fddd5411c38d5336",
+      "status": "changed"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1465,
+      "sha256": "0a02eaa1dd49efc6ce9de426da2a018c22b851ca9657704912f49ff33dc9fbe5",
+      "status": "changed"
+    },
+    {
+      "path": "Licenses/GPL-3.0.txt",
+      "bytes": 35823,
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Licenses/GPL-3.0-EXCEPTIONS.txt",
+      "bytes": 2068,
+      "sha256": "767e181465a33c5b0ccf0d6b78e3703ca658b0441039b14d3f450dadf2adb0ad",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Licenses/CommonLibF4-MIT.txt",
+      "bytes": 1095,
+      "sha256": "469c88770b84f44a867219a557cb366e03a665b53b1b1d0e1c157b64653f497f",
+      "status": "identical to 1.0.0"
+    },
+    {
+      "path": "Licenses/spdlog-MIT.txt",
+      "bytes": 1288,
+      "sha256": "c703fb8266409f5660523b307bbefd2bc8d7b92c848d0b973e6dd8640a5389f7",
+      "status": "identical to 1.0.0"
+    }
+  ],
+  "not_verified": [
+    "1.1.0 in game on any runtime - the rename changes what the game loads, so this needs a pass on at least one runtime",
+    "in game on 1.10.984 and 1.11.221, outstanding since 0.20.0"
+  ]
+}

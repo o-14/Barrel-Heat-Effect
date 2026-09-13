@@ -1,0 +1,348 @@
+{
+  "release": "0.20.2",
+  "branch": "claude/multi-runtime-0200",
+  "release_commit": "090e6cb17fa7064987aa5d5501de6c682efffb26",
+  "baseline": {
+    "file": "GunHeatHaze-0.20.1-heatpershot-default.zip",
+    "bytes": 654201,
+    "sha256": "e7eb520a85d75bcb00dd4a191c00afbcd5b6b06a5e4685415c5a6d0a0a98b860"
+  },
+  "change": {
+    "setting": "fScrollTilesPerSecond (Scroll speed, Advanced page)",
+    "old": 0.6,
+    "new": 0.7,
+    "tile_period_seconds": 1.429,
+    "chosen": "measured from the 0.20.1 session: 0.600 tiles/s 19:49-19:53, 0.800 at 19:54, 0.700 from 19:55 to 20:02",
+    "places_updated": [
+      "Data/F4SE/Plugins/GunHeat.ini",
+      "config.json control default",
+      "config.json help text",
+      "Data/MCM/Config/GunHeat/settings.ini",
+      "GunHeatPlugin/src/Config.h initialiser"
+    ],
+    "overlay_note": "the tested machine's Data/MCM/Settings/GunHeat.ini already holds fScrollTilesPerSecond=0.700000 and overrides the shipped default either way"
+  },
+  "dll": {
+    "bytes": 695808,
+    "sha256": "8a0e4457dcada277e745b7ebe8f76ae76e37da21e00f5217dd1c5780ba7255f1",
+    "plugin_version": "0x00140020",
+    "data_version": 1,
+    "compatible_versions": [
+      "0x010a3d80",
+      "0x010b0dd0",
+      "0x010b0f00"
+    ],
+    "vs_0_20_1": {
+      "differing_bytes": 18,
+      "float_constant": {
+        "offset": "0xfc2e",
+        "old": "0x3f19999a",
+        "new": "0x3f333333"
+      },
+      "version_fields": [
+        "version string",
+        "pluginVersion",
+        "2 VS_FIXEDFILEINFO patch fields",
+        "2 UTF-16 resource strings"
+      ],
+      "build_metadata": [
+        "PE timestamp",
+        "3 debug-directory timestamps",
+        "PDB age"
+      ]
+    }
+  },
+  "unchanged_vs_0_20_1": [
+    "all three .pex",
+    "all three .psc",
+    "the mesh",
+    "the texture",
+    "the esp",
+    "every license and notice file"
+  ],
+  "defaults": {
+    "controls": 30,
+    "mismatches": 0,
+    "checked_by": "tools/verify_0200_defaults.py",
+    "detail": "docs/release-0.20.2/defaults-validation.json"
+  },
+  "in_game_0_20_1": {
+    "runtime": "1.11.240",
+    "date": "2026-09-11",
+    "result": "passed",
+    "f4se_log": "plugin GunHeat.dll (00000001 GunHeat 00140010) loaded correctly (handle 2)",
+    "log_lines": 8527,
+    "log_levels": {
+      "info": 8527,
+      "warn": 0,
+      "error": 0,
+      "critical": 0
+    },
+    "shots": 989,
+    "weapons": [
+      "0000463F",
+      "00004822",
+      "00024F55",
+      "0004F46A"
+    ],
+    "ammo": [
+      "0001F276",
+      "0001F278",
+      "0001F66B",
+      "0004CE87"
+    ],
+    "weapon_switches": 8,
+    "art_object_attaches": 1,
+    "culls": 27,
+    "parks": 23,
+    "tick_cost_worst_us_per_second": 664,
+    "tick_rate_hz": "117-118",
+    "peak_refraction": 0.084,
+    "max_puffs": 6,
+    "caliber_scaling": [
+      {
+        "ammo": "0004CE87",
+        "damage": 13,
+        "multiplier": 0.658,
+        "heat_per_shot": 0.046
+      },
+      {
+        "ammo": "0001F276",
+        "damage": 18,
+        "multiplier": 0.775,
+        "heat_per_shot": 0.054
+      },
+      {
+        "ammo": "0001F278",
+        "damage": 30,
+        "multiplier": 1.0,
+        "heat_per_shot": 0.07
+      },
+      {
+        "ammo": "0001F66B",
+        "damage": 37,
+        "multiplier": 1.111,
+        "heat_per_shot": 0.078
+      }
+    ],
+    "note": "OnQuestInit did not re-run: the quest was already running in that save, so startquest was a no-op and LoadIniConfig did not log. Papyrus keeps script variables in the save, so the corrected heatPerShot initial value applies to a new instance, not an existing save - immaterial, since the fallback cannot fire with the shipped settings."
+  },
+  "not_verified": [
+    "in-game on 1.10.984 and 1.11.221",
+    "the standalone build from the source archive, verified at 0.20.0"
+  ],
+  "entries": [
+    {
+      "path": "F4SE/Plugins/GunHeat.dll",
+      "bytes": 695808,
+      "sha256": "8a0e4457dcada277e745b7ebe8f76ae76e37da21e00f5217dd1c5780ba7255f1",
+      "status": "changed in 0.20.2"
+    },
+    {
+      "path": "F4SE/Plugins/GunHeat.ini",
+      "bytes": 10243,
+      "sha256": "1e750ef398a6738b93a0612b8c6e106b308c827bf6c1fff3bff6c032b146315f",
+      "status": "changed in 0.20.2"
+    },
+    {
+      "path": "GunHeatHaze.esp",
+      "bytes": 705,
+      "sha256": "7006afd7a4608f6c31b48b90d0f82c92ba8afb3fe37410b1cd3987d00d7ea875",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "MCM/Config/GunHeat/config.json",
+      "bytes": 16250,
+      "sha256": "593ef98da83902f9767be058981b038c2aab630072a2399c3d3947d128956290",
+      "status": "changed in 0.20.2"
+    },
+    {
+      "path": "MCM/Config/GunHeat/settings.ini",
+      "bytes": 1637,
+      "sha256": "6982a36b2024cfc20e3d300772f2f76e361b58b8ac7bdcdeb116cb25c06526ee",
+      "status": "changed in 0.20.2"
+    },
+    {
+      "path": "Meshes/GunHeatHaze/GunHeatBarrelRefractionCard.nif",
+      "bytes": 11857,
+      "sha256": "d6d049a85dee3703f14f7f33b2481b9f4849c257598b23641b2afe4cdd3eef05",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Textures/GunHeatHaze/Soft0172_n.dds",
+      "bytes": 349700,
+      "sha256": "536c353d5879068b9c45d2bdbf28eb8d5cb923221d38428b82c32f9c7055c608",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatController.pex",
+      "bytes": 3668,
+      "sha256": "0c65c3cfd24c1ee8690164b26d467fd06e5654dddf15ba8bb43655e190c8d56d",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatNative.pex",
+      "bytes": 939,
+      "sha256": "1300c8a42451049e0cf21bf601c651bcf568b348b8375899df250a02d6c2989c",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Scripts/GunHeat/PlayerAlias.pex",
+      "bytes": 597,
+      "sha256": "1571571960f4cbb233999b8540a65796838a2fcfc19d618e7a9f7c1bdb3cc6dd",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatController.psc",
+      "bytes": 5935,
+      "sha256": "54f395259435aaa021258d0c8f4c1961d88bace7fcadcac8c122b1265ffc9952",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatNative.psc",
+      "bytes": 1367,
+      "sha256": "d0ac47d446ff305022d0ad75a6c60aa011df3a0f934493a092a89fedaf573478",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/PlayerAlias.psc",
+      "bytes": 218,
+      "sha256": "47a1ed8ed43542d151eb282aa6e952458e26ed16b1948dda13e50cedefe4c8f1",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "bytes": 1044,
+      "sha256": "28aed8c2612068cdb135e82e98cc098aa1a776ae827c79cbe1da111fdb5299e5",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 2175,
+      "sha256": "d05e92435dea8977646f0dee0057fa2134bc5849ed8844571f75bcc8c69fcb66",
+      "status": "changed in 0.20.2"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1418,
+      "sha256": "f612a3eab6672e2a003573fa1024b4b3955920c540b37fa35e88e4d385be6c31",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Licenses/GPL-3.0.txt",
+      "bytes": 35823,
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Licenses/GPL-3.0-EXCEPTIONS.txt",
+      "bytes": 2068,
+      "sha256": "767e181465a33c5b0ccf0d6b78e3703ca658b0441039b14d3f450dadf2adb0ad",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Licenses/CommonLibF4-MIT.txt",
+      "bytes": 1095,
+      "sha256": "469c88770b84f44a867219a557cb366e03a665b53b1b1d0e1c157b64653f497f",
+      "status": "identical to 0.20.1"
+    },
+    {
+      "path": "Licenses/spdlog-MIT.txt",
+      "bytes": 1288,
+      "sha256": "c703fb8266409f5660523b307bbefd2bc8d7b92c848d0b973e6dd8640a5389f7",
+      "status": "identical to 0.20.1"
+    }
+  ],
+  "identical_to_0_20_1": 15,
+  "changed": [
+    "F4SE/Plugins/GunHeat.dll",
+    "F4SE/Plugins/GunHeat.ini",
+    "MCM/Config/GunHeat/config.json",
+    "MCM/Config/GunHeat/settings.ini",
+    "README.txt"
+  ],
+  "archives": {
+    "GunHeatHaze-0.20.2-scroll-speed.zip": {
+      "bytes": 654292,
+      "sha256": "dde0554d40e615d2184c593cd386ee2cacdb444374483fcd807cffcaeda16b1c"
+    },
+    "GunHeatHaze-0.20.2-scroll-speed-source.zip": {
+      "bytes": 3559130,
+      "sha256": "867628d47c9dcd2e9db57ce8b732f17ef0ab588c22e94db4ec6937908b15272e"
+    }
+  },
+  "in_game": {
+    "1.10.163": {
+      "date": "2026-09-11",
+      "result": "passed",
+      "significance": "the regression gate against 0.17.4, and the F4SEPlugin_Query admission path",
+      "f4se": "0.6.23",
+      "f4se_log": "plugin GunHeat.dll (00000001 GunHeat 00000000) loaded correctly",
+      "banner": "GunHeat v0.20.2 on Fallout 4 1.10.163.0 (original runtime)",
+      "log_lines": 3672,
+      "log_levels": {
+        "info": 3672,
+        "warn": 0,
+        "error": 0,
+        "critical": 0
+      },
+      "shots": 489,
+      "weapons": [
+        "0000463F",
+        "00004822",
+        "000DC8E7"
+      ],
+      "ammo": [
+        "0001F276",
+        "0001F278"
+      ],
+      "weapon_switches": 2,
+      "art_object_attaches": 1,
+      "culls": 3,
+      "parks": 3,
+      "tick_cost_us_per_second": {
+        "min": 198,
+        "median": 500,
+        "p95": 560,
+        "max_excluding_log_spike": 863,
+        "full_second_windows": 184
+      },
+      "worst_single_tick_us_excluding_log_spike": 155,
+      "baseline_0_17_4_comparison": {
+        "median_us_per_second": "~500",
+        "worst_single_tick_us": 279
+      },
+      "cooldown_from_full_heat_seconds": 19.6,
+      "measured_scroll_tiles_per_second": 0.698,
+      "papyrus": "OnQuestInit fired this session and logged LoadIniConfig: heatPerShot=0.070000 - the 0.20.1 fix observed running for the first time",
+      "caliber_scaling": [
+        {
+          "damage": 18,
+          "heat_per_shot": 0.054
+        },
+        {
+          "damage": 25,
+          "heat_per_shot": 0.064
+        },
+        {
+          "damage": 30,
+          "heat_per_shot": 0.07
+        }
+      ],
+      "switch_reset_culls": "both switches are followed by a cull ~1.4 s later; the reset zeroes heat and the shimmer fades out on the fFadeOutSeconds ramp, which is the design",
+      "log_spike": {
+        "reported": "98292 us total, 97902 us worst",
+        "cause": "the tick that dumps the node tree; 97 of the 98 ms sit in two gaps between its own logger::info calls, which flush to disk on every line",
+        "only_with": "bDebugLogging=1, off by default",
+        "evidence": "20:25:10.000 -> 20:25:10.098 across five log lines"
+      },
+      "cosmetic_finding": {
+        "what": "f4se.log prints GunHeat 00000000 on 1.10.163",
+        "why": "F4SEPlugin_Query sets a_info->version = Version::MAJOR, which is 0 for any 0.x release; the F4SEPlugin_Version export carries the packed version",
+        "impact": "diagnostic only; GunHeat.log names the build on its first line",
+        "status": "not fixed in this release - it would need another DLL build"
+      },
+      "evidence_kept": "Backups/test-0.20.2-1.10.163-20260911"
+    }
+  }
+}

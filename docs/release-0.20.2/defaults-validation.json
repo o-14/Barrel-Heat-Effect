@@ -1,0 +1,225 @@
+{
+  "archive": "GunHeatHaze-0.20.2-scroll-speed.zip",
+  "controls": 30,
+  "sources": [
+    "config.json default",
+    "config.json help text",
+    "Data/F4SE/Plugins/GunHeat.ini",
+    "Data/MCM/Config/GunHeat/settings.ini",
+    "GunHeatPlugin/src/Config.h initialiser",
+    "GunHeatController.psc fallback (fHeatPerShot only)"
+  ],
+  "controls_checked": [
+    {
+      "page": "Settings",
+      "label": "Heat intensity",
+      "setting": "fRefractionMaxStrength:Haze",
+      "default": 0.04,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "Fade curve",
+      "setting": "fVisibilityCurve:Haze",
+      "default": 1.0,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "Effect width",
+      "setting": "fSizeWidth:Haze",
+      "default": 0.8,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "Effect height",
+      "setting": "fSizeHeight:Haze",
+      "default": 0.5,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "Height above barrel",
+      "setting": "fArtOffsetUp:Haze",
+      "default": 1.0,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "Heat per shot",
+      "setting": "fHeatPerShot:Heat",
+      "default": 0.07,
+      "sources_checked": 6
+    },
+    {
+      "page": "Settings",
+      "label": "Cool-down at full heat",
+      "setting": "fMaxFadeOutSeconds:Heat",
+      "default": 20.0,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "Reset heat on weapon switch",
+      "setting": "bResetHeatOnWeaponSwitch:Heat",
+      "default": true,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "All firearms",
+      "setting": "bAllowAllWeapons:Weapons",
+      "default": true,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "Exclude energy weapons",
+      "setting": "bExcludeEnergyWeapons:Weapons",
+      "default": true,
+      "sources_checked": 5
+    },
+    {
+      "page": "Settings",
+      "label": "Debug logging",
+      "setting": "bDebugLogging:Debug",
+      "default": false,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Visibility threshold",
+      "setting": "fMinHeatToShow:Heat",
+      "default": 0.05,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Cool-down after short burst",
+      "setting": "fMinFadeOutSeconds:Heat",
+      "default": 8.0,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Fade in",
+      "setting": "fFadeInSeconds:Heat",
+      "default": 3.0,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Fade out",
+      "setting": "fFadeOutSeconds:Heat",
+      "default": 2.5,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Hard duration cap",
+      "setting": "fEffectDurationSeconds:Heat",
+      "default": 0.0,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Distance ahead of muzzle",
+      "setting": "fArtOffsetForward:Haze",
+      "default": 0.0,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Movement smear",
+      "setting": "bSmearEnabled:Haze",
+      "default": true,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Smear amount",
+      "setting": "fSmearGain:Haze",
+      "default": 0.015,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Smear limit",
+      "setting": "fSmearMaxOffset:Haze",
+      "default": 6.0,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Per-shot pulsing",
+      "setting": "bPulseEnabled:Haze",
+      "default": true,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Pulse strength",
+      "setting": "fPulseStrength:Haze",
+      "default": 0.01,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Pulse decay",
+      "setting": "fPulseDecaySeconds:Haze",
+      "default": 0.3,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Puff expansion",
+      "setting": "fPuffScale:Haze",
+      "default": 0.1,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Puff rise",
+      "setting": "fPuffRise:Haze",
+      "default": 0.5,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Puff scroll",
+      "setting": "fPuffScroll:Haze",
+      "default": 0.15,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Puff variance",
+      "setting": "fPuffVariance:Haze",
+      "default": 0.35,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Puff overlap",
+      "setting": "iPuffMaxOverlap:Haze",
+      "default": 6,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Scroll speed",
+      "setting": "fScrollTilesPerSecond:Haze",
+      "default": 0.7,
+      "sources_checked": 5
+    },
+    {
+      "page": "Advanced",
+      "label": "Scale heat by caliber",
+      "setting": "bEnabled:CaliberScaling",
+      "default": true,
+      "sources_checked": 5
+    }
+  ],
+  "result": "All 30 controls state the same default everywhere it is written."
+}

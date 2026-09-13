@@ -1,0 +1,52 @@
+{
+  "log_sha256": "7f22a5df1ad727701d8a55211de73f6d0af41ec138c5ffda92e6102889f5d7c7",
+  "lines": 20346,
+  "first": "[10:48:09.196] [info] GunHeat v0.1.0",
+  "last": "[11:26:15.079] [info] Tick rate: 112 ticks/sec, 377 us total, 54 us worst",
+  "warnings_errors": [],
+  "tick_samples": 1473,
+  "tick_hz_median": 118,
+  "cpu_us_per_second_median": 471,
+  "cpu_us_per_second_p95": 531,
+  "worst_tick_us": 244,
+  "shots": 2354,
+  "cooled_and_parked": 40,
+  "card_culls": 58,
+  "weapon_resets": 7,
+  "overrides_loaded": 414,
+  "saved_settings": {
+    "Heat": {
+      "fHeatPerShot": "0.070000",
+      "fFadeInSeconds": "3.000000",
+      "fMinFadeOutSeconds": "8.000000",
+      "fMaxFadeOutSeconds": "20.000000",
+      "fMinHeatToShow": "0.050000",
+      "fFadeOutSeconds": "2.500000",
+      "fEffectDurationSeconds": "0.000000"
+    },
+    "Debug": {
+      "bDebugLogging": "1"
+    },
+    "Haze": {
+      "fRefractionMaxStrength": "0.040000",
+      "fArtOffsetUp": "1.000000",
+      "bPulseEnabled": "1",
+      "fPulseStrength": "0.020000",
+      "fPulseDecaySeconds": "0.300000",
+      "fSizeWidth": "0.800000",
+      "fSmearGain": "0.015000",
+      "fSizeHeight": "0.500000",
+      "fPuffRise": "0.500000",
+      "fPuffScale": "0.100000",
+      "bSmearEnabled": "1",
+      "fVisibilityCurve": "1.000000",
+      "fScrollTilesPerSecond": "0.600000"
+    }
+  },
+  "caveats": [
+    "Timing measures logged plugin CPU work, not GPU frame time.",
+    "Final log ends during cooling; earlier completed cycles show culling/parking.",
+    "Saved pulse strength was 0.02, not the requested new default 0.01.",
+    "Height and rise are saved and covered by the loader; their transforms are not directly logged."
+  ]
+}

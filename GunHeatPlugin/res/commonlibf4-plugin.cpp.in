@@ -1,0 +1,26 @@
+// GunHeat's F4SEPlugin_Version - read by F4SE 0.7.x on 1.10.984 and 1.11.x.
+//
+// Replaces Dear-Modding's default template, which declares address- and layout-independence
+// for every next-gen and anniversary runtime and would load on builds nobody has tested.
+// Listing the runtimes instead makes F4SE refuse everything else: its loader accepts a plugin
+// either through those independence bits or through an exact match in compatibleVersions.
+//
+// F4SE 0.6.23 on 1.10.163 does not read this; it calls F4SEPlugin_Query in src/main.cpp.
+// Keep this list and SUPPORTED_RUNTIMES in main.cpp in step.
+
+#include <F4SE/F4SE.h>
+
+F4SE_PLUGIN_VERSION = []() noexcept {
+    F4SE::PluginVersionData v{};
+    v.PluginVersion({ ${COMMONLIB_PLUGIN_VERSION_MAJOR}, ${COMMONLIB_PLUGIN_VERSION_MINOR}, ${COMMONLIB_PLUGIN_VERSION_PATCH}, 0 });
+    v.PluginName("${COMMONLIB_PLUGIN_NAME}");
+    v.AuthorName("${COMMONLIB_PLUGIN_AUTHOR}");
+    v.UsesSigScanning(false);
+    v.UsesAddressLibrary(false);
+    v.UsesAddressLibraryNG(false);
+    v.IsLayoutDependent(false);
+    v.IsLayoutDependentNG(false);
+    v.HasNoStructUse(false);
+    v.CompatibleVersions({ F4SE::RUNTIME_1_10_984, F4SE::RUNTIME_1_11_221, F4SE::RUNTIME_1_11_240 });
+    return v;
+}();

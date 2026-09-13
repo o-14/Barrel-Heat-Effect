@@ -1,0 +1,48 @@
+name: Bug report
+description: Something is wrong in game
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every diagnosis in this project has come from the two log files below. Please attach them —
+        a description alone is rarely enough to find the cause.
+
+        Both are rewritten each time the game starts, so collect them **before your next session**.
+  - type: input
+    id: game-version
+    attributes:
+      label: Fallout 4 version
+      description: 1.10.163, 1.10.984, 1.11.221 or 1.11.240
+    validations:
+      required: true
+  - type: input
+    id: mod-version
+    attributes:
+      label: Barrel Heat Effect version
+      description: The first line of BarrelHeatEffect.log, e.g. "BarrelHeatEffect v1.1.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw, what you expected, and what you were doing at the time.
+    validations:
+      required: true
+  - type: checkboxes
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        Set `bDebugLogging=1` in `Data\F4SE\Plugins\BarrelHeatEffect.ini`, play until the problem happens,
+        then attach both files from `Documents\My Games\Fallout4\F4SE\`.
+      options:
+        - label: BarrelHeatEffect.log attached, recorded with bDebugLogging=1
+        - label: f4se.log attached
+        - label: Crash log attached, if the game crashed
+  - type: input
+    id: mcm
+    attributes:
+      label: Mod Configuration Menu
+      description: Which MCM build, or "not installed"

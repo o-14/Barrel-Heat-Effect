@@ -1,0 +1,236 @@
+{
+  "release": "0.20.1",
+  "branch": "claude/multi-runtime-0200",
+  "release_commit": "f67d6eedce2f8c0f9ea4843390774e7e57b52d97",
+  "baseline": {
+    "file": "GunHeatHaze-0.20.0-multi-runtime.zip",
+    "bytes": 653948,
+    "sha256": "b404ab6e07d24158ae430b057f49217c7e63a7d6080562361142472d07d8e8b2"
+  },
+  "change": {
+    "summary": "GunHeatController's heat-per-shot fallback 0.15 -> 0.07; DLL version 0.20.1.",
+    "reachable_only_when": "[CaliberScaling] bEnabled=0 and fHeatPerShot hand-edited to 0 or less; with caliber scaling on, Config::GetHeatPerShot clamps to 0.001 or more",
+    "effect_settings_defaults": "unchanged"
+  },
+  "dll": {
+    "bytes": 695808,
+    "sha256": "5f9c733717a30ebf8fe68aad76545be9d006d03c0b76916a3100a696d18c2bf5",
+    "plugin_version": "0x00140010",
+    "compatible_versions": [
+      "0x010a3d80",
+      "0x010b0dd0",
+      "0x010b0f00"
+    ],
+    "query_admits": [
+      "1.10.163"
+    ],
+    "vs_0_20_0_rebuilt": {
+      "differing_bytes": 11,
+      "offsets": [
+        "0x108",
+        "0x67b1d",
+        "0x8ded4",
+        "0x8def0",
+        "0x8df0c",
+        "0x937dc",
+        "0x9f6d4",
+        "0xa9096",
+        "0xa909e",
+        "0xa91ae",
+        "0xa92ce"
+      ],
+      "classified": [
+        "version string",
+        "pluginVersion",
+        "2 VS_FIXEDFILEINFO patch fields",
+        "2 UTF-16 resource strings",
+        "PE timestamp",
+        "3 debug-directory timestamps",
+        "PDB age"
+      ]
+    },
+    "vs_0_20_0_shipped": {
+      "extra_code_region": "0x5cb0..0x5d06 plus 0x5d8c, 87 bytes",
+      "verdict": "link non-determinism: a rebuild of 0.20.0 from unchanged source reproduces it"
+    },
+    "remaining_0_20_0_strings": 5,
+    "remaining_0_20_0_strings_note": "the worktree path in the PDB reference and in library source paths used by log messages"
+  },
+  "pex": {
+    "file": "Scripts/GunHeat/GunHeatController.pex",
+    "byte_comparison": "not meaningful: the compiler orders its tables differently per run - two compiles of identical source differed in 2460 of 3668 bytes",
+    "semantic_diff_vs_0_20_0": [
+      "variable heatPerShot .initialValue 0.150000 -> 0.070000"
+    ],
+    "compared": {
+      "variable": 7,
+      "property": 5,
+      "function": 10,
+      "userFlag": 6
+    },
+    "line_numbers": "unchanged; the edit is one line",
+    "control": "two compiles of the same source are semantically identical",
+    "checked_by": "tools/diff_pex.py"
+  },
+  "defaults": {
+    "controls": 30,
+    "mismatches": 0,
+    "sources_compared": [
+      "config.json default",
+      "config.json help text",
+      "Data/F4SE/Plugins/GunHeat.ini",
+      "Data/MCM/Config/GunHeat/settings.ini",
+      "GunHeatPlugin/src/Config.h initialiser",
+      "GunHeatController.psc fallback (fHeatPerShot only)"
+    ],
+    "regression_fixture": "the same check fails on the 0.20.0 archive, at the .psc fallback",
+    "checked_by": "tools/verify_0200_defaults.py",
+    "detail": "docs/release-0.20.1/defaults-validation.json"
+  },
+  "not_verified": [
+    "the standalone build from the source archive, verified at 0.20.0 and not repeated",
+    "in-game on 1.10.163, 1.10.984 and 1.11.221, outstanding since 0.20.0"
+  ],
+  "entries": [
+    {
+      "path": "F4SE/Plugins/GunHeat.dll",
+      "bytes": 695808,
+      "sha256": "5f9c733717a30ebf8fe68aad76545be9d006d03c0b76916a3100a696d18c2bf5",
+      "status": "changed in 0.20.1"
+    },
+    {
+      "path": "F4SE/Plugins/GunHeat.ini",
+      "bytes": 10191,
+      "sha256": "593bc3fda999d481b0fffd9857f77abdb8dbd6f1ca29a9554f9e7a7e52527260",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "GunHeatHaze.esp",
+      "bytes": 705,
+      "sha256": "7006afd7a4608f6c31b48b90d0f82c92ba8afb3fe37410b1cd3987d00d7ea875",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "MCM/Config/GunHeat/config.json",
+      "bytes": 16250,
+      "sha256": "5ca4afc9252a0658e462d64b142cd7d934bd6c6a78f82b93728d9651ab11be90",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "MCM/Config/GunHeat/settings.ini",
+      "bytes": 1637,
+      "sha256": "644127bf7c4b9851a56f2a7444f3b4082e33deb3ab033540c7cc786d2c79dd8b",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Meshes/GunHeatHaze/GunHeatBarrelRefractionCard.nif",
+      "bytes": 11857,
+      "sha256": "d6d049a85dee3703f14f7f33b2481b9f4849c257598b23641b2afe4cdd3eef05",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Textures/GunHeatHaze/Soft0172_n.dds",
+      "bytes": 349700,
+      "sha256": "536c353d5879068b9c45d2bdbf28eb8d5cb923221d38428b82c32f9c7055c608",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatController.pex",
+      "bytes": 3668,
+      "sha256": "0c65c3cfd24c1ee8690164b26d467fd06e5654dddf15ba8bb43655e190c8d56d",
+      "status": "changed in 0.20.1"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatNative.pex",
+      "bytes": 939,
+      "sha256": "1300c8a42451049e0cf21bf601c651bcf568b348b8375899df250a02d6c2989c",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Scripts/GunHeat/PlayerAlias.pex",
+      "bytes": 597,
+      "sha256": "1571571960f4cbb233999b8540a65796838a2fcfc19d618e7a9f7c1bdb3cc6dd",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatController.psc",
+      "bytes": 5935,
+      "sha256": "54f395259435aaa021258d0c8f4c1961d88bace7fcadcac8c122b1265ffc9952",
+      "status": "changed in 0.20.1"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatNative.psc",
+      "bytes": 1367,
+      "sha256": "d0ac47d446ff305022d0ad75a6c60aa011df3a0f934493a092a89fedaf573478",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/PlayerAlias.psc",
+      "bytes": 218,
+      "sha256": "47a1ed8ed43542d151eb282aa6e952458e26ed16b1948dda13e50cedefe4c8f1",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "bytes": 1044,
+      "sha256": "28aed8c2612068cdb135e82e98cc098aa1a776ae827c79cbe1da111fdb5299e5",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 2010,
+      "sha256": "1d8aa4cd5e848a0be3a551188f98c251bcf0dc73caf82cc37e83933071f1ab22",
+      "status": "changed in 0.20.1"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1418,
+      "sha256": "f612a3eab6672e2a003573fa1024b4b3955920c540b37fa35e88e4d385be6c31",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Licenses/GPL-3.0.txt",
+      "bytes": 35823,
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Licenses/GPL-3.0-EXCEPTIONS.txt",
+      "bytes": 2068,
+      "sha256": "767e181465a33c5b0ccf0d6b78e3703ca658b0441039b14d3f450dadf2adb0ad",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Licenses/CommonLibF4-MIT.txt",
+      "bytes": 1095,
+      "sha256": "469c88770b84f44a867219a557cb366e03a665b53b1b1d0e1c157b64653f497f",
+      "status": "identical to 0.20.0"
+    },
+    {
+      "path": "Licenses/spdlog-MIT.txt",
+      "bytes": 1288,
+      "sha256": "c703fb8266409f5660523b307bbefd2bc8d7b92c848d0b973e6dd8640a5389f7",
+      "status": "identical to 0.20.0"
+    }
+  ],
+  "identical_to_0_20_0": 16,
+  "archives": {
+    "GunHeatHaze-0.20.1-heatpershot-default.zip": {
+      "bytes": 654201,
+      "sha256": "e7eb520a85d75bcb00dd4a191c00afbcd5b6b06a5e4685415c5a6d0a0a98b860"
+    },
+    "GunHeatHaze-0.20.1-heatpershot-default-source.zip": {
+      "bytes": 3581779,
+      "sha256": "5ca4e4aa0846d2535123f41f8a70f515af45f2f911999f788d5c5f44d87e4ae2"
+    }
+  },
+  "source_archive_added": [
+    "docs/RELEASE_0.20.0.md",
+    "docs/release-0.20.0/defaults-validation.json",
+    "docs/release-0.20.0/release-validation.json",
+    "tools/compile_papyrus.py",
+    "tools/diff_pex.py",
+    "tools/verify_0200_defaults.py"
+  ],
+  "source_archive_removed": []
+}

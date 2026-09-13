@@ -1,0 +1,21 @@
+{
+  "unique_controls": 30,
+  "control_occurrences": 41,
+  "type_errors": [],
+  "retuned_since_0_17_4": {
+    "fScrollTilesPerSecond:Haze": "0.20.2, 0.6 -> 0.7 tiles per second"
+  },
+  "old_fixture_errors": [
+    "uPuffMaxOverlap:Haze"
+  ],
+  "new_key": "iPuffMaxOverlap:Haze",
+  "overlap_options": {
+    "min": 1,
+    "max": 16,
+    "step": 1,
+    "default": 6,
+    "sourceType": "ModSettingInt"
+  },
+  "unrelated_controls_unchanged": true,
+  "result": "Supported prefixes, matching defaults and old-bug regression check passed."
+}

@@ -1,0 +1,93 @@
+{
+  "archive": "GunHeatHaze-0.17.3-tuned-defaults.zip",
+  "bytes": 677124,
+  "sha256": "5cbd4d788943d9c069df96e88563a0f186b39694498f434602e79e104cd0303b",
+  "baseline": "GunHeatHaze-0.17.2-subtle-refraction.zip",
+  "unchanged_files": 9,
+  "changed_files": [
+    "F4SE/Plugins/GunHeat.dll",
+    "F4SE/Plugins/GunHeat.ini",
+    "MCM/Config/GunHeat/config.json",
+    "MCM/Config/GunHeat/settings.ini"
+  ],
+  "files": [
+    {
+      "path": "F4SE/Plugins/GunHeat.dll",
+      "bytes": 773632,
+      "sha256": "977391d2187de71449f91a011d8d193343ddcabb044c34769fe54deddd38ee7b",
+      "status": "changed"
+    },
+    {
+      "path": "F4SE/Plugins/GunHeat.ini",
+      "bytes": 10191,
+      "sha256": "e3b4aa030216ce0b8d3cf11382e49f0461a10c1c47e95576174d0e1f5fa4a819",
+      "status": "changed"
+    },
+    {
+      "path": "GunHeatHaze.esp",
+      "bytes": 705,
+      "sha256": "7006afd7a4608f6c31b48b90d0f82c92ba8afb3fe37410b1cd3987d00d7ea875",
+      "status": "unchanged"
+    },
+    {
+      "path": "MCM/Config/GunHeat/config.json",
+      "bytes": 16250,
+      "sha256": "3dba543e3447bcc83bde4473e025d3b84e2bb901ed6bec14beb59e986cc48689",
+      "status": "changed"
+    },
+    {
+      "path": "MCM/Config/GunHeat/settings.ini",
+      "bytes": 1637,
+      "sha256": "7662f6c30715f606927e542f07e8fda6eb494c5fac4cd42b46bf1a587c0c005a",
+      "status": "changed"
+    },
+    {
+      "path": "Meshes/GunHeatHaze/GunHeatBarrelRefractionCard.nif",
+      "bytes": 11857,
+      "sha256": "d6d049a85dee3703f14f7f33b2481b9f4849c257598b23641b2afe4cdd3eef05",
+      "status": "unchanged"
+    },
+    {
+      "path": "Textures/GunHeatHaze/Soft0172_n.dds",
+      "bytes": 349700,
+      "sha256": "536c353d5879068b9c45d2bdbf28eb8d5cb923221d38428b82c32f9c7055c608",
+      "status": "unchanged"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatController.pex",
+      "bytes": 3637,
+      "sha256": "e130014ceb6114b687b72e15e73c4d4e491ce3e7d822e2cc58636244352bcd08",
+      "status": "unchanged"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatNative.pex",
+      "bytes": 939,
+      "sha256": "1300c8a42451049e0cf21bf601c651bcf568b348b8375899df250a02d6c2989c",
+      "status": "unchanged"
+    },
+    {
+      "path": "Scripts/GunHeat/PlayerAlias.pex",
+      "bytes": 597,
+      "sha256": "1571571960f4cbb233999b8540a65796838a2fcfc19d618e7a9f7c1bdb3cc6dd",
+      "status": "unchanged"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatController.psc",
+      "bytes": 5723,
+      "sha256": "273dd4b5044afbfc8aeaa03ac280d46d30d5d355aa05836b7212ea5839cebdbe",
+      "status": "unchanged"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatNative.psc",
+      "bytes": 1367,
+      "sha256": "d0ac47d446ff305022d0ad75a6c60aa011df3a0f934493a092a89fedaf573478",
+      "status": "unchanged"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/PlayerAlias.psc",
+      "bytes": 218,
+      "sha256": "47a1ed8ed43542d151eb282aa6e952458e26ed16b1948dda13e50cedefe4c8f1",
+      "status": "unchanged"
+    }
+  ]
+}

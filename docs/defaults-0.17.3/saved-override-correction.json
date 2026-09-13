@@ -1,0 +1,10 @@
+{
+  "path": "Data/MCM/Settings/GunHeat.ini",
+  "before_sha256": "f88e4b383ee65b725cee9497118ae50de38f70590cb1bee303bfd8f2feb2f18c",
+  "after_sha256": "1e81d994c5645b0ead47397c075d17bb4623bc35b7886af8a5f7c3285d0a34a1",
+  "changed_key": "Haze.fPulseStrength",
+  "previous": 0.02,
+  "current": 0.01,
+  "other_saved_settings_preserved": true,
+  "note": "Saved file verified; new value will load on the next game session. No new runtime test was performed."
+}

@@ -1,0 +1,17 @@
+# This project has fought line-ending churn for its whole life: .psc files showing as modified
+# with no real change, and tools/package_release.py carrying a whole branch so that a CRLF
+# rewrite cannot silently alter a shipped file. Settle it here.
+* text=auto eol=lf
+
+# Files a player opens in Notepad, and the Papyrus sources the game's compiler reads.
+*.psc text eol=crlf
+*.ini text eol=crlf
+*.txt text eol=crlf
+
+# Never touched.
+*.pex binary
+*.esp binary
+*.dll binary
+*.nif binary
+*.dds binary
+*.pdb binary

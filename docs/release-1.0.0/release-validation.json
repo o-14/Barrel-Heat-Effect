@@ -1,0 +1,229 @@
+{
+  "release": "1.0.0",
+  "branch": "claude/multi-runtime-0200",
+  "release_commit": "a0d11941b8f8e038a96f58b9606bce90276f36e0",
+  "baseline": {
+    "file": "GunHeatHaze-0.21.0.zip",
+    "sha256": "e898402513aeba0088240c2746002b08711608b490481b216e726505999ec1e0"
+  },
+  "changes": [
+    {
+      "what": "removed the unused PROJ record from the esp",
+      "detail": "PROJ 01000801 GunHeatHeatPuffProjectile, 263 bytes, from the abandoned projectile experiment; referenced by nothing",
+      "verified": [
+        "the FormID occurred exactly once in the file, in its own record header",
+        "QUST 01000800 and ARTO 01000802 come through byte-identical",
+        "TES4 differs only at offset 34, HEDR numRecords 3 -> 2",
+        "nextObjectID stays 00000803, so 01000801 is never reused",
+        "the rewritten file re-walks cleanly and accounts for all 442 bytes"
+      ],
+      "tool": "tools/strip_esp_record.py"
+    },
+    {
+      "what": "version 1.0.0",
+      "detail": "pluginVersion and F4SEPlugin_Query both report 0x01000000"
+    }
+  ],
+  "esp": {
+    "bytes": 442,
+    "sha256": "3a5ed81f4b8fd7d914f125de085e38dd2235a4f6c9c7364844730b59102cac34",
+    "was_bytes": 705,
+    "records": [
+      "QUST 01000800",
+      "ARTO 01000802"
+    ],
+    "masters": [
+      "Fallout4.esm"
+    ],
+    "overrides_of_master_records": 0
+  },
+  "dll": {
+    "bytes": 695808,
+    "sha256": "4c367507c8a212bc56f5f49e7cf65e88086e68b6b58af88c2f9be953eb20da38",
+    "plugin_version": "0x01000000",
+    "compatible_versions": [
+      "0x010a3d80",
+      "0x010b0dd0",
+      "0x010b0f00"
+    ],
+    "vs_0_21_0": {
+      "differing_bytes": 304,
+      "text_section_bytes": 89,
+      "text_explained": "87 are the link non-determinism region documented since 0.20.0; 2 are the Query immediate 0x00150000 -> 0x01000000",
+      "rsrc_bytes": 195,
+      "rsrc_explained": "'1.0.0' is one character shorter than '0.21.0', so the whole version resource shifts",
+      "pdata_and_reloc": "identical"
+    }
+  },
+  "entries": [
+    {
+      "path": "F4SE/Plugins/GunHeat.dll",
+      "bytes": 695808,
+      "sha256": "4c367507c8a212bc56f5f49e7cf65e88086e68b6b58af88c2f9be953eb20da38",
+      "status": "changed in 1.0.0"
+    },
+    {
+      "path": "F4SE/Plugins/GunHeat.ini",
+      "bytes": 9173,
+      "sha256": "1266a55da7a051fa22b1b04b3ce159cf949e0341780306697076976ef0334398",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "GunHeatHaze.esp",
+      "bytes": 442,
+      "sha256": "3a5ed81f4b8fd7d914f125de085e38dd2235a4f6c9c7364844730b59102cac34",
+      "status": "changed in 1.0.0"
+    },
+    {
+      "path": "MCM/Config/GunHeat/config.json",
+      "bytes": 16250,
+      "sha256": "593ef98da83902f9767be058981b038c2aab630072a2399c3d3947d128956290",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "MCM/Config/GunHeat/settings.ini",
+      "bytes": 1637,
+      "sha256": "6982a36b2024cfc20e3d300772f2f76e361b58b8ac7bdcdeb116cb25c06526ee",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Meshes/GunHeatHaze/GunHeatBarrelRefractionCard.nif",
+      "bytes": 11857,
+      "sha256": "d6d049a85dee3703f14f7f33b2481b9f4849c257598b23641b2afe4cdd3eef05",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Textures/GunHeatHaze/Soft0172_n.dds",
+      "bytes": 349700,
+      "sha256": "536c353d5879068b9c45d2bdbf28eb8d5cb923221d38428b82c32f9c7055c608",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatController.pex",
+      "bytes": 3668,
+      "sha256": "0c65c3cfd24c1ee8690164b26d467fd06e5654dddf15ba8bb43655e190c8d56d",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Scripts/GunHeat/GunHeatNative.pex",
+      "bytes": 939,
+      "sha256": "1300c8a42451049e0cf21bf601c651bcf568b348b8375899df250a02d6c2989c",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Scripts/GunHeat/PlayerAlias.pex",
+      "bytes": 597,
+      "sha256": "1571571960f4cbb233999b8540a65796838a2fcfc19d618e7a9f7c1bdb3cc6dd",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatController.psc",
+      "bytes": 5935,
+      "sha256": "54f395259435aaa021258d0c8f4c1961d88bace7fcadcac8c122b1265ffc9952",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/GunHeatNative.psc",
+      "bytes": 1367,
+      "sha256": "d0ac47d446ff305022d0ad75a6c60aa011df3a0f934493a092a89fedaf573478",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Scripts/Source/User/GunHeat/PlayerAlias.psc",
+      "bytes": 218,
+      "sha256": "47a1ed8ed43542d151eb282aa6e952458e26ed16b1948dda13e50cedefe4c8f1",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "COPYRIGHT.md",
+      "bytes": 1044,
+      "sha256": "28aed8c2612068cdb135e82e98cc098aa1a776ae827c79cbe1da111fdb5299e5",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 5374,
+      "sha256": "65f371e6edad03e495c9c35342ea12e45a93cb40e66dc145900983af3a5a1ed6",
+      "status": "changed in 1.0.0"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1418,
+      "sha256": "f612a3eab6672e2a003573fa1024b4b3955920c540b37fa35e88e4d385be6c31",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Licenses/GPL-3.0.txt",
+      "bytes": 35823,
+      "sha256": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Licenses/GPL-3.0-EXCEPTIONS.txt",
+      "bytes": 2068,
+      "sha256": "767e181465a33c5b0ccf0d6b78e3703ca658b0441039b14d3f450dadf2adb0ad",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Licenses/CommonLibF4-MIT.txt",
+      "bytes": 1095,
+      "sha256": "469c88770b84f44a867219a557cb366e03a665b53b1b1d0e1c157b64653f497f",
+      "status": "identical to 0.21.0"
+    },
+    {
+      "path": "Licenses/spdlog-MIT.txt",
+      "bytes": 1288,
+      "sha256": "c703fb8266409f5660523b307bbefd2bc8d7b92c848d0b973e6dd8640a5389f7",
+      "status": "identical to 0.21.0"
+    }
+  ],
+  "changed": [
+    "F4SE/Plugins/GunHeat.dll",
+    "GunHeatHaze.esp",
+    "README.txt"
+  ],
+  "identical_to_0_21_0": 17,
+  "archives": {
+    "GunHeatHaze-1.0.0.zip": {
+      "bytes": 655146,
+      "sha256": "77ff08003dda029ef49617383de625c4616f3027f702dfbe94fd6b6b75f390a8"
+    },
+    "GunHeatHaze-1.0.0-source.zip": {
+      "bytes": 3528250,
+      "sha256": "4b7d16f16786abe8216abcdf4e0562fff5d39be023f8a20e29b402b59a844c74"
+    }
+  },
+  "defaults": {
+    "controls": 30,
+    "mismatches": 0,
+    "checked_by": "tools/verify_0200_defaults.py"
+  },
+  "public_repository": {
+    "path": "<local-path>",
+    "branch": "main",
+    "commit": "ba59c7d",
+    "files": 157,
+    "history": "fresh, source-only, begins at 1.0.0",
+    "excluded": [
+      "29 Fallout 4-derived .nif and .dds",
+      "another mod's files under analysis/",
+      "the built DLL and .pex",
+      "agent handoffs and session prompts",
+      "__pycache__"
+    ],
+    "verified": [
+      "no .nif or .dds in the tree or in history",
+      "no account name or machine name in any of the 157 files",
+      "the submodule gitlink records the pin 2aaefd1, checked in a fresh clone",
+      "a fresh clone fetches all three submodules at their exact pins",
+      "a fresh clone builds: 695,808 bytes, pluginVersion 0x01000000, all three exports"
+    ],
+    "not_done": [
+      "no remote added and nothing pushed - that is the author's to do"
+    ]
+  },
+  "not_verified": [
+    "1.0.0 in game on any runtime",
+    "in game on 1.10.984 and 1.11.221"
+  ]
+}

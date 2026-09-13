@@ -1,0 +1,36 @@
+# Build output
+GunHeatPlugin/build*/
+GunHeatPlugin/out/
+*.pdb
+*.ilk
+*.obj
+*.exp
+*.lib
+__pycache__/
+*.pyc
+
+# Releases and working files, which live outside this repository
+dist/
+Backups/
+*.log
+*.user
+*.suo
+
+# The mesh and texture are derived from Fallout 4 assets and are not redistributed here.
+# Ignored rather than merely absent, so that a careless `git add -A` cannot introduce them.
+Data/Meshes/
+Data/Textures/
+Data/F4SE/Plugins/*.dll
+
+# Compiled Papyrus. Build output, and every .pex header embeds the account name, the machine
+# name and the full source path of whoever compiled it. Build them with tools/compile_papyrus.py.
+# The GunHeat namespace keeps its old name; see docs/RELEASE_1.1.0.md.
+Data/Scripts/GunHeat/
+*.pex
+
+# Never stage local build metadata or runtime binaries in this source-only repository.
+GunHeatPlugin/.xmake/
+*.dds
+*.nif
+*.dll
+/delivery/

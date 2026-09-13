@@ -1,0 +1,74 @@
+{
+  "baseline": "0.17.1",
+  "trial": "0.17.2-subtle-refraction",
+  "original_texture_sha256": "5b49045cca20969785c305373ca1d7ca982111ca5bd405b38f0c01bf230c24f7",
+  "texture_sha256": "536c353d5879068b9c45d2bdbf28eb8d5cb923221d38428b82c32f9c7055c608",
+  "nif_sha256": "d6d049a85dee3703f14f7f33b2481b9f4849c257598b23641b2afe4cdd3eef05",
+  "vanilla_source": "Data/Fallout4 - Textures1.ba2",
+  "normal_xy_multiplier": 0.5,
+  "preserved_nif_blocks": 17,
+  "changed_nif_block": "BSShaderTextureSet paths only",
+  "mips": [
+    {
+      "size": 512,
+      "rms_ratio": 0.500071131674512,
+      "correlation": 0.9998979354476064,
+      "max_encoded_error": 1.75
+    },
+    {
+      "size": 256,
+      "rms_ratio": 0.5001847761558963,
+      "correlation": 0.9998905616266557,
+      "max_encoded_error": 0.75
+    },
+    {
+      "size": 128,
+      "rms_ratio": 0.5002967683446741,
+      "correlation": 0.9998818263498317,
+      "max_encoded_error": 0.75
+    },
+    {
+      "size": 64,
+      "rms_ratio": 0.5001506986333176,
+      "correlation": 0.9998532728517815,
+      "max_encoded_error": 0.75
+    },
+    {
+      "size": 32,
+      "rms_ratio": 0.5002269098875751,
+      "correlation": 0.9997427352097057,
+      "max_encoded_error": 0.75
+    },
+    {
+      "size": 16,
+      "rms_ratio": 0.5023048160480792,
+      "correlation": 0.9988550062603293,
+      "max_encoded_error": 2.25
+    },
+    {
+      "size": 8,
+      "rms_ratio": 0.5109295968509943,
+      "correlation": 0.9971855944097658,
+      "max_encoded_error": 0.75
+    },
+    {
+      "size": 4,
+      "rms_ratio": 0.507371404963127,
+      "correlation": 0.9925237056082891,
+      "max_encoded_error": 0.25
+    },
+    {
+      "size": 2,
+      "rms_ratio": 0.44721359549995787,
+      "correlation": 0.9867264099491307,
+      "max_encoded_error": 0.25
+    },
+    {
+      "size": 1,
+      "rms_ratio": 0.4472135954999579,
+      "correlation": null,
+      "max_encoded_error": 0.25
+    }
+  ],
+  "limitation": "Static vector checks only; perceived transparency needs in-game comparison."
+}

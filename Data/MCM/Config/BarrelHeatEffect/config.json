@@ -1,0 +1,571 @@
+{
+  "modName": "BarrelHeatEffect",
+  "displayName": "Barrel Heat Effect",
+  "minMcmVersion": 4,
+  "pages": [
+    {
+      "pageDisplayName": "Settings",
+      "content": [
+        {
+          "text": "Appearance",
+          "type": "section"
+        },
+        {
+          "id": "fRefractionMaxStrength:Haze",
+          "text": "Heat intensity",
+          "type": "slider",
+          "help": "How strong the distortion is. Vanilla Minigun is 0.20. Default: 0.04",
+          "valueOptions": {
+            "min": 0.005,
+            "max": 0.2,
+            "step": 0.005,
+            "default": 0.04,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fVisibilityCurve:Haze",
+          "text": "Fade curve",
+          "type": "slider",
+          "help": "Lower keeps the shimmer visible longer as it cools. Default: 1.0",
+          "valueOptions": {
+            "min": 0.1,
+            "max": 2.0,
+            "step": 0.05,
+            "default": 1.0,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fSizeWidth:Haze",
+          "text": "Effect width",
+          "type": "slider",
+          "help": "Width of the heat card. Default: 0.8",
+          "valueOptions": {
+            "min": 0.2,
+            "max": 3.0,
+            "step": 0.05,
+            "default": 0.8,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fSizeHeight:Haze",
+          "text": "Effect height",
+          "type": "slider",
+          "help": "Height of the heat card. Default: 0.5",
+          "valueOptions": {
+            "min": 0.2,
+            "max": 3.0,
+            "step": 0.05,
+            "default": 0.5,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fArtOffsetUp:Haze",
+          "text": "Height above barrel",
+          "type": "slider",
+          "help": "Lifts the effect off the barrel. Default: 1",
+          "valueOptions": {
+            "min": -20.0,
+            "max": 40.0,
+            "step": 1.0,
+            "default": 1.0,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "text": "Behaviour",
+          "type": "section"
+        },
+        {
+          "id": "fHeatPerShot:Heat",
+          "text": "Heat per shot",
+          "type": "slider",
+          "help": "How fast heat builds. Higher shows the effect sooner. Default: 0.07",
+          "valueOptions": {
+            "min": 0.01,
+            "max": 0.3,
+            "step": 0.005,
+            "default": 0.07,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fMaxFadeOutSeconds:Heat",
+          "text": "Cool-down at full heat",
+          "type": "slider",
+          "help": "Seconds to cool from a fully hot barrel. Default: 20",
+          "valueOptions": {
+            "min": 2.0,
+            "max": 40.0,
+            "step": 0.5,
+            "default": 20.0,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "bResetHeatOnWeaponSwitch:Heat",
+          "text": "Reset heat on weapon switch",
+          "type": "switcher",
+          "help": "A freshly drawn weapon starts cold. Default: on",
+          "valueOptions": {
+            "default": true,
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Weapons",
+          "type": "section"
+        },
+        {
+          "id": "bAllowAllWeapons:Weapons",
+          "text": "All firearms",
+          "type": "switcher",
+          "help": "Every gun, vanilla and modded. Off uses the ini list. Default: on",
+          "valueOptions": {
+            "default": true,
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bExcludeEnergyWeapons:Weapons",
+          "text": "Exclude energy weapons",
+          "type": "switcher",
+          "help": "Skips laser, plasma, gauss and similar. Default: on",
+          "valueOptions": {
+            "default": true,
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Troubleshooting",
+          "type": "section"
+        },
+        {
+          "id": "bDebugLogging:Debug",
+          "text": "Debug logging",
+          "type": "switcher",
+          "help": "Writes GunHeat.log. Leave off for normal play. Default: off",
+          "valueOptions": {
+            "default": false,
+            "sourceType": "ModSettingBool"
+          }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Advanced",
+      "content": [
+        {
+          "text": "Timing",
+          "type": "section"
+        },
+        {
+          "id": "fMinHeatToShow:Heat",
+          "text": "Visibility threshold",
+          "type": "slider",
+          "help": "Heat needed before anything shows. Default: 0.05",
+          "valueOptions": {
+            "min": 0.02,
+            "max": 0.6,
+            "step": 0.01,
+            "default": 0.05,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fMinFadeOutSeconds:Heat",
+          "text": "Cool-down after short burst",
+          "type": "slider",
+          "help": "Seconds to cool from barely warm. Default: 8",
+          "valueOptions": {
+            "min": 2.0,
+            "max": 20.0,
+            "step": 0.5,
+            "default": 8.0,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fFadeInSeconds:Heat",
+          "text": "Fade in",
+          "type": "slider",
+          "help": "Seconds for the shimmer to appear. Default: 3.0",
+          "valueOptions": {
+            "min": 0.1,
+            "max": 6.0,
+            "step": 0.1,
+            "default": 3.0,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fFadeOutSeconds:Heat",
+          "text": "Fade out",
+          "type": "slider",
+          "help": "Seconds for the shimmer to disappear. Default: 2.5",
+          "valueOptions": {
+            "min": 0.1,
+            "max": 10.0,
+            "step": 0.1,
+            "default": 2.5,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fEffectDurationSeconds:Heat",
+          "text": "Hard duration cap",
+          "type": "slider",
+          "help": "Max seconds visible after the last shot. 0 = off. Default: 0",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 30.0,
+            "step": 0.5,
+            "default": 0.0,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "text": "Placement",
+          "type": "section"
+        },
+        {
+          "id": "fArtOffsetForward:Haze",
+          "text": "Distance ahead of muzzle",
+          "type": "slider",
+          "help": "Moves the effect along the barrel. Default: 0.0",
+          "valueOptions": {
+            "min": -20.0,
+            "max": 40.0,
+            "step": 1.0,
+            "default": 0.0,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "text": "Movement",
+          "type": "section"
+        },
+        {
+          "id": "bSmearEnabled:Haze",
+          "text": "Movement smear",
+          "type": "switcher",
+          "help": "Heat trails behind a swinging weapon. Default: on",
+          "valueOptions": {
+            "default": true,
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "fSmearGain:Haze",
+          "text": "Smear amount",
+          "type": "slider",
+          "help": "How far it trails. Default: 0.015",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 0.1,
+            "step": 0.005,
+            "default": 0.015,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fSmearMaxOffset:Haze",
+          "text": "Smear limit",
+          "type": "slider",
+          "help": "Cap on the trail distance. Default: 6.0",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 20.0,
+            "step": 0.5,
+            "default": 6.0,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "text": "Puffing",
+          "type": "section"
+        },
+        {
+          "id": "bPulseEnabled:Haze",
+          "text": "Per-shot pulsing",
+          "type": "switcher",
+          "help": "Each shot disturbs the plume. Default: on",
+          "valueOptions": {
+            "default": true,
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "fPulseStrength:Haze",
+          "text": "Pulse strength",
+          "type": "slider",
+          "help": "Size of each shot bump. Default: 0.01",
+          "valueOptions": {
+            "min": 0.005,
+            "max": 0.05,
+            "step": 0.005,
+            "default": 0.01,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fPulseDecaySeconds:Haze",
+          "text": "Pulse decay",
+          "type": "slider",
+          "help": "Seconds for a bump to fade. Default: 0.3",
+          "valueOptions": {
+            "min": 0.05,
+            "max": 1.5,
+            "step": 0.05,
+            "default": 0.3,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fPuffScale:Haze",
+          "text": "Puff expansion",
+          "type": "slider",
+          "help": "How much a puff swells. Default: 0.1",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 0.8,
+            "step": 0.02,
+            "default": 0.1,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fPuffRise:Haze",
+          "text": "Puff rise",
+          "type": "slider",
+          "help": "How far a puff drifts up. Default: 0.5",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.1,
+            "default": 0.5,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fPuffScroll:Haze",
+          "text": "Puff scroll",
+          "type": "slider",
+          "help": "Texture push per puff. Default: 0.15",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.05,
+            "default": 0.15,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "fPuffVariance:Haze",
+          "text": "Puff variance",
+          "type": "slider",
+          "help": "Random variation between puffs. Default: 0.35",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 1.0,
+            "step": 0.05,
+            "default": 0.35,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "id": "iPuffMaxOverlap:Haze",
+          "text": "Puff overlap",
+          "type": "slider",
+          "help": "Max puffs alive at once. Default: 6",
+          "valueOptions": {
+            "min": 1,
+            "max": 16,
+            "step": 1,
+            "default": 6,
+            "sourceType": "ModSettingInt"
+          }
+        },
+        {
+          "id": "fScrollTilesPerSecond:Haze",
+          "text": "Scroll speed",
+          "type": "slider",
+          "help": "Texture drift, tiles per second. Default: 0.7",
+          "valueOptions": {
+            "min": 0.0,
+            "max": 3.0,
+            "step": 0.05,
+            "default": 0.7,
+            "sourceType": "ModSettingFloat"
+          }
+        },
+        {
+          "text": "Weapons",
+          "type": "section"
+        },
+        {
+          "id": "bEnabled:CaliberScaling",
+          "text": "Scale heat by caliber",
+          "type": "switcher",
+          "help": "Bigger rounds heat faster. Default: on",
+          "valueOptions": {
+            "default": true,
+            "sourceType": "ModSettingBool"
+          }
+        }
+      ]
+    }
+  ],
+  "content": [
+    {
+      "text": "Appearance",
+      "type": "section"
+    },
+    {
+      "id": "fRefractionMaxStrength:Haze",
+      "text": "Heat intensity",
+      "type": "slider",
+      "help": "How strong the distortion is. Vanilla Minigun is 0.20. Default: 0.04",
+      "valueOptions": {
+        "min": 0.005,
+        "max": 0.2,
+        "step": 0.005,
+        "default": 0.04,
+        "sourceType": "ModSettingFloat"
+      }
+    },
+    {
+      "id": "fVisibilityCurve:Haze",
+      "text": "Fade curve",
+      "type": "slider",
+      "help": "Lower keeps the shimmer visible longer as it cools. Default: 1.0",
+      "valueOptions": {
+        "min": 0.1,
+        "max": 2.0,
+        "step": 0.05,
+        "default": 1.0,
+        "sourceType": "ModSettingFloat"
+      }
+    },
+    {
+      "id": "fSizeWidth:Haze",
+      "text": "Effect width",
+      "type": "slider",
+      "help": "Width of the heat card. Default: 0.8",
+      "valueOptions": {
+        "min": 0.2,
+        "max": 3.0,
+        "step": 0.05,
+        "default": 0.8,
+        "sourceType": "ModSettingFloat"
+      }
+    },
+    {
+      "id": "fSizeHeight:Haze",
+      "text": "Effect height",
+      "type": "slider",
+      "help": "Height of the heat card. Default: 0.5",
+      "valueOptions": {
+        "min": 0.2,
+        "max": 3.0,
+        "step": 0.05,
+        "default": 0.5,
+        "sourceType": "ModSettingFloat"
+      }
+    },
+    {
+      "id": "fArtOffsetUp:Haze",
+      "text": "Height above barrel",
+      "type": "slider",
+      "help": "Lifts the effect off the barrel. Default: 1",
+      "valueOptions": {
+        "min": -20.0,
+        "max": 40.0,
+        "step": 1.0,
+        "default": 1.0,
+        "sourceType": "ModSettingFloat"
+      }
+    },
+    {
+      "text": "Behaviour",
+      "type": "section"
+    },
+    {
+      "id": "fHeatPerShot:Heat",
+      "text": "Heat per shot",
+      "type": "slider",
+      "help": "How fast heat builds. Higher shows the effect sooner. Default: 0.07",
+      "valueOptions": {
+        "min": 0.01,
+        "max": 0.3,
+        "step": 0.005,
+        "default": 0.07,
+        "sourceType": "ModSettingFloat"
+      }
+    },
+    {
+      "id": "fMaxFadeOutSeconds:Heat",
+      "text": "Cool-down at full heat",
+      "type": "slider",
+      "help": "Seconds to cool from a fully hot barrel. Default: 20",
+      "valueOptions": {
+        "min": 2.0,
+        "max": 40.0,
+        "step": 0.5,
+        "default": 20.0,
+        "sourceType": "ModSettingFloat"
+      }
+    },
+    {
+      "id": "bResetHeatOnWeaponSwitch:Heat",
+      "text": "Reset heat on weapon switch",
+      "type": "switcher",
+      "help": "A freshly drawn weapon starts cold. Default: on",
+      "valueOptions": {
+        "default": true,
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "text": "Weapons",
+      "type": "section"
+    },
+    {
+      "id": "bAllowAllWeapons:Weapons",
+      "text": "All firearms",
+      "type": "switcher",
+      "help": "Every gun, vanilla and modded. Off uses the ini list. Default: on",
+      "valueOptions": {
+        "default": true,
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bExcludeEnergyWeapons:Weapons",
+      "text": "Exclude energy weapons",
+      "type": "switcher",
+      "help": "Skips laser, plasma, gauss and similar. Default: on",
+      "valueOptions": {
+        "default": true,
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "text": "Troubleshooting",
+      "type": "section"
+    },
+    {
+      "id": "bDebugLogging:Debug",
+      "text": "Debug logging",
+      "type": "switcher",
+      "help": "Writes GunHeat.log. Leave off for normal play. Default: off",
+      "valueOptions": {
+        "default": false,
+        "sourceType": "ModSettingBool"
+      }
+    }
+  ]
+}

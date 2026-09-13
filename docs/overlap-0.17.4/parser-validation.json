@@ -1,0 +1,6 @@
+{
+  "production_source_sha256": "2596ceb7e0614e1424be4197cd68d36fc7bd11ae3f6814c01236fa29ccc60a25",
+  "tested": "Extracted unchanged Trim, ParseUInt and overlap branch from production Config.cpp",
+  "result": "Production overlap parser: keys, precedence, file overrides, bounds, invalid values and lookup aliases passed.",
+  "limitation": "Isolated parser execution, not an in-game MCM round trip."
+}
